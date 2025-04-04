@@ -5,7 +5,7 @@ description = "A script to encode SRT subtitles into video files."
 authors = ["Jan-Niklas Schneider <schneider.janniklas@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/schneiderjan/sub_encoder"  
+homepage = "https://github.com/schneiderjan/sub_encoder"
 repository = "https://github.com/schneiderjan/sub_encoder"
 keywords = ["ffmpeg", "video", "subtitles", "srt", "encoder"]
 classifiers = [
@@ -14,11 +14,10 @@ classifiers = [
     "Operating System :: OS Independent"
 ]
 packages = [{ include = "src", from = "." }]  # Explicitly declare the package
-changelog = "CHANGELOG.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-ffmpeg-python = "^2.0.12" 
+python-ffmpeg = ">=2.0.12,<3.0.0"
 
 [tool.poetry.scripts]
 sub-encoder = "src.encode_srt:encode_srt"
