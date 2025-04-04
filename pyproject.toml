@@ -13,20 +13,12 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent"
 ]
+packages = [{ include = "src", from = "." }]  # Explicitly declare the package
+changelog = "CHANGELOG.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
-ffmpeg-python = "*"
-opencv-python = "*"
-numpy = "*"
+python = "^3.8"
+ffmpeg-python = "^2.0.12" 
 
 [tool.poetry.scripts]
-encode-srt = "srt_encoder.encode_srt:main"
-
-[[tool.poetry.packages]]
-include = "srt_encoder"
-from = "src"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+sub-encoder = "src.encode_srt:encode_srt"
